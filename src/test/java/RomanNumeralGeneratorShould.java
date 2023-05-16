@@ -73,7 +73,7 @@ public class RomanNumeralGeneratorShould {
 
         String convertResult = romanNumeralGenerator.convert(12);
 
-        String expectedOutput = "12";
+        String expectedOutput = "XII";
 
         assertEquals(expectedOutput, convertResult);
     }
