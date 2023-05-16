@@ -3,6 +3,7 @@ public class RomanNumeralGenerator {
     enum ArabicToRoman {
         TEN(10, "X"),
         FIVE(5, "V"),
+        FOUR(4, "IV"),
         ONE(1, "I");
 
         private final int arabic;
@@ -19,12 +20,14 @@ public class RomanNumeralGenerator {
 
         String output = "";
 
-        if(arabic == 4) {
-            return "IV";
-        }
 
         for (ArabicToRoman arabicToRomanKey : ArabicToRoman.values()) {
             while (arabic >= arabicToRomanKey.arabic) {
+//                if (arabic == ArabicToRoman.FOUR.arabic) {
+//                    output += ArabicToRoman.FOUR.roman;
+//                    arabic -= ArabicToRoman.FOUR.arabic;
+//                    break;
+//                }
                 output += arabicToRomanKey.roman;
                 arabic -= arabicToRomanKey.arabic;
             }
