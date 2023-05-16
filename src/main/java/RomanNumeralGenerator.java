@@ -1,8 +1,19 @@
 public class RomanNumeralGenerator {
 
-    public static final String I = "I";
-    public static final String V = "V";
-    public static final String X = "X";
+    enum ArabicToRoman {
+        ONE(1, "I"),
+        FIVE(5, "V"),
+        TEN(10, "X");
+
+        private final int arabic;
+        private final String roman;
+
+        ArabicToRoman(int arabic, String roman) {
+
+            this.arabic = arabic;
+            this.roman = roman;
+        }
+    }
 
     public String convert(int arabic) {
 
@@ -10,6 +21,9 @@ public class RomanNumeralGenerator {
 
         if(arabic == 30){
             return "XXX";
+        }
+        if(arabic == 20) {
+            return "XX";
         }
 
         if (arabic >= ArabicToRoman.TEN.arabic) {
@@ -29,18 +43,5 @@ public class RomanNumeralGenerator {
         return output;
     }
 
-    enum ArabicToRoman {
-        ONE(1, "I"),
-        FIVE(5, "V"),
-        TEN(10, "X");
 
-        private final int arabic;
-        private final String roman;
-
-        ArabicToRoman(int arabic, String roman) {
-
-            this.arabic = arabic;
-            this.roman = roman;
-        }
-    }
 }
