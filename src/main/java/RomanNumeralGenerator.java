@@ -8,21 +8,35 @@ public class RomanNumeralGenerator {
 
         String output = "";
 
-        if (arabic >= 10) {
-            output += X;
-            arabic -= 10;
+        if (arabic >= ArabicToRoman.TEN.arabic) {
+            output += ArabicToRoman.TEN.roman;
+            arabic -= ArabicToRoman.TEN.arabic;
         }
 
-        if (arabic >= 5) {
-            output += V;
-            arabic -= 5;
+        if (arabic >= ArabicToRoman.FIVE.arabic) {
+            output += ArabicToRoman.FIVE.roman;
+            arabic -= ArabicToRoman.FIVE.arabic;
         }
 
         if (arabic <= 3) {
-            output += I.repeat(arabic);
+            output += ArabicToRoman.ONE.roman.repeat(arabic);
         }
 
         return output;
     }
 
+    enum ArabicToRoman {
+        ONE(1, "I"),
+        FIVE(5, "V"),
+        TEN(10, "X");
+
+        private final int arabic;
+        private final String roman;
+
+        ArabicToRoman(int arabic, String roman) {
+
+            this.arabic = arabic;
+            this.roman = roman;
+        }
+    }
 }
