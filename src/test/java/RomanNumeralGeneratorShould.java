@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -24,62 +26,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 //        47 -> "XLVII" (40 -> "XL" + 7 -> "VII")
 //        3888 -> "MMMDCCCLXXXVIII" (3000 -> "MMM" + 800 -> "DCCC" + 80 -> "LXXX" + 8 -> "VIII")
 public class RomanNumeralGeneratorShould {
-    @Test
-    void return_I_when_one_received(){
+
+    @ParameterizedTest
+    @CsvSource({"1, 'I'", "2, 'II'", "3, 'III'"})
+    void return_I_case_expected_when_received_less_or_equals_than_three(int input, String expectedOutput) {
         RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
-        String convertResult = romanNumeralGenerator.convert(1);
-        String expectedResult = "I";
 
-        assertEquals(expectedResult, convertResult);
+        String convertResult = romanNumeralGenerator.convert(input);
+
+        assertEquals(expectedOutput, convertResult);
     }
-
-    @Test
-    void return_II_when_2_received(){
+    @ParameterizedTest
+    @CsvSource({"5, 'V'", "6, 'VI'", "7, 'VII'", "8, 'VIII'"})
+    void return_V_case_expected_when_received_between_five_and_eight(int input, String expectedOutput) {
         RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
-        String convertResult = romanNumeralGenerator.convert(2);
-        String expectedResult = "II";
 
-        assertEquals(expectedResult, convertResult);
+        String convertResult = romanNumeralGenerator.convert(input);
+
+        assertEquals(expectedOutput, convertResult);
     }
-
-    @Test
-    void return_III_when_3_received(){
-        RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
-        String convertResult = romanNumeralGenerator.convert(3);
-        String expectedResult = "III";
-
-        assertEquals(expectedResult, convertResult);
-    }
-
-    @Test
-    void return_V_when_5_received() {
-        RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
-        String convertResult = romanNumeralGenerator.convert(5);
-        String expectedResult = "V";
-
-        assertEquals(expectedResult, convertResult);
-
-    }
-    @Test
-    void return_VI_when_6_received() {
-        RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
-        String convertResult = romanNumeralGenerator.convert(6);
-        String expectedResult = "VI";
-
-        assertEquals(expectedResult, convertResult);
-
-    }
-
-    @Test
-    void return_VII_when_7_received() {
-        RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
-        String convertResult = romanNumeralGenerator.convert(7);
-        String expectedResult = "VII";
-
-        assertEquals(expectedResult, convertResult);
-
-    }
-
-
-
 }

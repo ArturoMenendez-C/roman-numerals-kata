@@ -11,15 +11,6 @@ public class RomanNumeralGenerator {
             output = V;
             arabic -= 5;
         }
-//        if(arabic == 6) {
-//            output = "V";
-//            output += I;
-//        }
-//        if(arabic == 7){
-//            output = "V";
-//            output += I;
-//            output += I;
-//        }
 
         if (arabic <= 3) {
             output += I.repeat(arabic);
