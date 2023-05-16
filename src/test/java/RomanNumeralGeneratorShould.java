@@ -109,5 +109,15 @@ public class RomanNumeralGeneratorShould {
         assertEquals(expectedResult, convertResult);
     }
 
+    @Test
+    void return_IV_case_when_receiving_4(){
+        RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
+
+        String convertResult = romanNumeralGenerator.convert(4);
+
+        String expectedResult = "IV";
+        assertEquals(expectedResult, convertResult);
+    }
+
 
 }
