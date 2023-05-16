@@ -42,4 +42,13 @@ public class RomanNumeralGeneratorShould {
         assertEquals(expectedResult, convertResult);
     }
 
+    @Test
+    void return_III_when_3_received(){
+        RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
+        String convertResult = romanNumeralGenerator.convert(3);
+        String expectedResult = "III";
+
+        assertEquals(expectedResult, convertResult);
+    }
+
 }
