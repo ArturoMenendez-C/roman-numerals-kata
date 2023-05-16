@@ -32,4 +32,5 @@ public class RomanNumeralGeneratorShould {
 
         assertEquals(expectedResult, convertResult);
     }
+
 }
