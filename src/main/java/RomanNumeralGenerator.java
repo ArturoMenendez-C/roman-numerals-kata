@@ -9,12 +9,12 @@ public class RomanNumeralGenerator {
         String output = "";
 
         if (arabic >= 10) {
-            output = X;
+            output += X;
             arabic -= 10;
         }
 
         if (arabic >= 5) {
-            output = V;
+            output += V;
             arabic -= 5;
         }
 
