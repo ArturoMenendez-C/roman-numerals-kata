@@ -11,7 +11,7 @@ public class RomanNumeralGenerator {
             return "X";
         }
         if(arabic == 11) {
-            return "11";
+            return "XI";
         }
 
         if (arabic >= 5) {
