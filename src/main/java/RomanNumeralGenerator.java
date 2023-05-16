@@ -7,6 +7,10 @@ public class RomanNumeralGenerator {
 
         String output = "";
 
+        if(arabic == 10){
+            return "X";
+        }
+
         if (arabic >= 5) {
             output = V;
             arabic -= 5;
