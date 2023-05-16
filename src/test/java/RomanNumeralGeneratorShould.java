@@ -51,4 +51,14 @@ public class RomanNumeralGeneratorShould {
         assertEquals(expectedResult, convertResult);
     }
 
+    @Test
+    void return_V_when_5_received() {
+        RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
+        String convertResult = romanNumeralGenerator.convert(5);
+        String expectedResult = "V";
+
+        assertEquals(expectedResult, convertResult);
+
+    }
+
 }
