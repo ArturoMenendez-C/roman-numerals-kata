@@ -45,4 +45,16 @@ public class RomanNumeralGeneratorShould {
 
         assertEquals(expectedOutput, convertResult);
     }
+
+    @Test
+    void return_X_case_when_receive_10() {
+        RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
+        String expectedOutput = "X";
+
+        String convertResult = romanNumeralGenerator.convert(10);
+
+        assertEquals(expectedOutput, convertResult);
+    }
+
+
 }
