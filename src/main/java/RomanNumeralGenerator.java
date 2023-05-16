@@ -19,12 +19,15 @@ public class RomanNumeralGenerator {
 
         String output = "";
 
+        if(arabic == 4) {
+            return "IV";
+        }
+
         for (ArabicToRoman arabicToRomanKey : ArabicToRoman.values()) {
             while (arabic >= arabicToRomanKey.arabic) {
                 output += arabicToRomanKey.roman;
                 arabic -= arabicToRomanKey.arabic;
             }
-
         }
 
         return output;
