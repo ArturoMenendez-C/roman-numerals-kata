@@ -18,18 +18,28 @@ public class RomanNumeralGenerator {
     public String convert(int arabic) {
 
         String output = "";
+//
+//        if(arabic >= ArabicToRoman.TEN.arabic*3) {
+//            output += ArabicToRoman.TEN.roman;
+//            arabic -= ArabicToRoman.TEN.arabic;
+//
+//        }
+//        if(arabic >= ArabicToRoman.TEN.arabic*2) {
+//            output += ArabicToRoman.TEN.roman;
+//            arabic -= ArabicToRoman.TEN.arabic;
+//
+//        }
+//
+//        if (arabic >= ArabicToRoman.TEN.arabic) {
+//            output += ArabicToRoman.TEN.roman;
+//            arabic -= ArabicToRoman.TEN.arabic;
+//        }
 
-        if(arabic == 30){
-            return "XXX";
-        }
-        if(arabic == 20) {
-            return "XX";
-        }
-
-        if (arabic >= ArabicToRoman.TEN.arabic) {
+        while(arabic >= ArabicToRoman.TEN.arabic) {
             output += ArabicToRoman.TEN.roman;
             arabic -= ArabicToRoman.TEN.arabic;
         }
+
 
         if (arabic >= ArabicToRoman.FIVE.arabic) {
             output += ArabicToRoman.FIVE.roman;
