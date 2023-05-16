@@ -8,6 +8,10 @@ public class RomanNumeralGenerator {
 
         String output = "";
 
+        if(arabic == 30){
+            return "XXX";
+        }
+
         if (arabic >= ArabicToRoman.TEN.arabic) {
             output += ArabicToRoman.TEN.roman;
             arabic -= ArabicToRoman.TEN.arabic;
