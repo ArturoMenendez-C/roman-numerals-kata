@@ -1,14 +1,38 @@
 public class RomanNumeralGenerator {
+
+    public static final String I = "I";
+
     public String convert(int arabic) {
 
-        String result = "I";
-        if(arabic == 2){
-           result = result.repeat(2);
+
+        String output = "";
+
+//        if(arabic == 2){
+//            output = multiplyBy(2, I);
+//        }
+//        if(arabic == 3) {
+//            output = multiplyBy(3, I);
+//        }
+//        if(arabic == 1) {
+//            output = I;
+//        }
+
+//        if(arabic <= 3) {
+//            output = multiplyBy(arabic);
+//        }
+
+        if(arabic <= 3) {
+
+            output = I.repeat(arabic);
         }
-        if(arabic == 3) {
-            result = result.repeat(3);
-        }
-        return result;
+
+        return output;
     }
+
+//    private static String multiplyBy(int multiplier) {
+//        return I.repeat(multiplier);
+//
+//    }
+
 
 }
