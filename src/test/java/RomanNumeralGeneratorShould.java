@@ -70,6 +70,16 @@ public class RomanNumeralGeneratorShould {
 
     }
 
+    @Test
+    void return_VII_when_7_received() {
+        RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
+        String convertResult = romanNumeralGenerator.convert(7);
+        String expectedResult = "VII";
+
+        assertEquals(expectedResult, convertResult);
+
+    }
+
 
 
 }

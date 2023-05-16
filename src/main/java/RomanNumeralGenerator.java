@@ -10,6 +10,9 @@ public class RomanNumeralGenerator {
 
             output = "V";
         }
+        if(arabic == 6) {
+            output = "VI";
+        }
 
         if (arabic <= 3) {
 
