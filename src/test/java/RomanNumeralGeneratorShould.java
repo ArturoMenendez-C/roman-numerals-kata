@@ -119,5 +119,15 @@ public class RomanNumeralGeneratorShould {
         assertEquals(expectedResult, convertResult);
     }
 
+    @Test
+    void return_XXXIV_case_when_receiving_34(){
+        RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
+
+        String convertResult = romanNumeralGenerator.convert(34);
+
+        String expectedResult = "XXXIV";
+        assertEquals(expectedResult, convertResult);
+    }
+
 
 }
