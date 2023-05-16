@@ -4,13 +4,14 @@ public class RomanNumeralGenerator {
 
     public String convert(int arabic) {
 
-
         String output = "";
 
-        if(arabic == 5){
+        if (arabic == 5) {
+
             output = "V";
         }
-        if(arabic <= 3) {
+
+        if (arabic <= 3) {
 
             output = I.repeat(arabic);
         }
