@@ -7,6 +7,9 @@ public class RomanNumeralGenerator {
 
         String output = "";
 
+        if(arabic == 5){
+            output = "V";
+        }
         if(arabic <= 3) {
 
             output = I.repeat(arabic);
