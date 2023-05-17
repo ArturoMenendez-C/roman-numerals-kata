@@ -78,16 +78,6 @@ public class RomanNumeralGeneratorShould {
         assertEquals(expectedOutput, convertResult);
     }
 
-    @Test
-    void return_XVI_case_when_received_16(){
-        RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
-
-        String convertResult = romanNumeralGenerator.convert(16);
-
-        String expectedOutput = "XVI";
-
-        assertEquals(expectedOutput, convertResult);
-    }
 
     @Test
     void return_XXX_case_when_received_30(){
@@ -99,43 +89,14 @@ public class RomanNumeralGeneratorShould {
         assertEquals(expectedOutput, convertResult);
     }
 
-    @Test
-    void return_XX_case_when_received_20(){
-        RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
-        String convertResult = romanNumeralGenerator.convert(20);
-
-        String expectedResult = "XX";
-
-        assertEquals(expectedResult, convertResult);
-    }
-
-    @Test
-    void return_IV_case_when_receiving_4(){
+    @ParameterizedTest
+    @CsvSource({"4, 'IV'","16, 'XVI'","19, 'XIX'","20, 'XX'","34, 'XXXIV'","51, 'LI'", "103, 'CIII'", "1050, 'ML'"})
+    void return_case_expected_when_received_values(int input, String expectedOutput) {
         RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
 
-        String convertResult = romanNumeralGenerator.convert(4);
+        String convertResult = romanNumeralGenerator.convert(input);
 
-        String expectedResult = "IV";
-        assertEquals(expectedResult, convertResult);
-    }
-
-    @Test
-    void return_XXXIV_case_when_receiving_34(){
-        RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
-
-        String convertResult = romanNumeralGenerator.convert(34);
-
-        String expectedResult = "XXXIV";
-        assertEquals(expectedResult, convertResult);
-    }
-    @Test
-    void return_XIX_case_when_receiving_19(){
-        RomanNumeralGenerator romanNumeralGenerator = new RomanNumeralGenerator();
-
-        String convertResult = romanNumeralGenerator.convert(19);
-
-        String expectedResult = "XIX";
-        assertEquals(expectedResult, convertResult);
+        assertEquals(expectedOutput, convertResult);
     }
 
 

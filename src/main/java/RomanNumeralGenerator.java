@@ -1,6 +1,9 @@
 public class RomanNumeralGenerator {
 
     enum ArabicToRoman {
+        THOUSAND(1000, "M"),
+        HUNDRED(100, "C"),
+        FIFTY(50, "L"),
         TEN(10, "X"),
         NINE(9, "IX"),
         FIVE(5, "V"),
